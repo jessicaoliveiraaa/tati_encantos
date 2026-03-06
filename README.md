@@ -20,7 +20,7 @@ O projeto foi construído utilizando as seguintes tecnologias:
 
 ## 🚀 Como visualizar o projeto
 
-*(Em breve: Link para o projeto online)*
+*(Link para ver o projeto: https://tatiencantos.com.br/)*
 
 ## 👩‍💻 Autora
 
