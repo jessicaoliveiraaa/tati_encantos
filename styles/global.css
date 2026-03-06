@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --bg-color: rgba(79, 0, 128, 0.218);
+  --ff-sans: 'Poppins', system-ui, sans-serif;
+  --fw-base: 400;
+  --fw-md: 700;
+  --fs-sm: .75rem;
+  --fs-base: .875rem;
+  --fs-bold: 2rem;
+  --lh-md: 125%;
+  --lh-bold: 170%;
+  --gradient-btn: linear-gradient(90deg, #d8bfd8 0%, #ffb6c1 100%);
+  --shadow-hover: 0 10px 20px rgba(0,0,0,0.15);
+  --white: #ffffff;
+  --text-dark: #333;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--ff-sans);
+  /* padding-bottom removido pois agora temos footer */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- ESTILOS DO FOOTER --- */
+footer {
+    background-color: #fff;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+}
+
+.footer-content p {
+    color: #4f0080;
+    margin-bottom: 1rem;
+}
+
+.dev-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.dev-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* CORREÇÃO 4: Essa é a linha que faltava para alinhar */
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-dev {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: var(--gradient-btn); /* Mesmo gradiente bonito */
+    color: white;
+    text-decoration: none;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.btn-dev:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+@media (width >= 80em) {
+  :root {
+    --fs-sm: .75rem;
+    --fs-base: .875rem;
+    --fs-bold: 2.5rem;
+  }
+}
+
+.card-price.preco-oferta {
+    color: #2E7D32;
+    font-weight: 800;
+}

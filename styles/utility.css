@@ -1,0 +1,40 @@
+.container {
+  --max-width: 450px; /* Aumentado no mobile para as caixas terem mais largura útil */
+  width: min(var(--max-width), 100% - 2rem);
+  margin-inline: auto;
+}
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@media (width >= 80em) {
+  .container {
+    --max-width: 90rem; /* Aumentado de 80rem para 90rem. Isso garante que as 3 caixas fiquem mais largas na tela do PC, mesmo com o gap grande. */
+    width: min(var(--max-width), 100% - 4rem);
+  }
+
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}

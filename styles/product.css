@@ -1,0 +1,199 @@
+/* --- GRID DE PRODUTOS --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem; 
+    padding-bottom: 5rem;
+}
+
+/* --- CARD DE PRODUTO --- */
+.product-card {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-6px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- CARROSSEL DE IMAGENS (Maior, sem cortar) --- */
+.card-gallery {
+    width: 100%;
+    height: 480px; /* Altura aumentada (era 420px) para a imagem ter mais espaço para crescer */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    background-color: #f8f8f8; 
+    position: relative;
+    scrollbar-width: none; 
+}
+.card-gallery::-webkit-scrollbar {
+    display: none; 
+}
+
+.gallery-item {
+    flex: 0 0 100%; 
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    padding: 0; /* Removido o padding de 10px. A imagem agora encosta nas bordas, ficando consideravelmente maior na tela */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que a imagem JAMAIS será cortada */
+    display: block;
+    transition: transform 0.5s ease; 
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06); 
+    cursor: zoom-in;
+}
+
+.drag-hint {
+    position: absolute;
+    bottom: 35px; /* Altura boa para não espremer embaixo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto; 
+    color: #4f0080;
+    font-size: 0.7rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 6px 16px;
+    border-radius: 20px; /* Deixa arredondado igual uma pílula */
+    pointer-events: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* --- INFORMAÇÕES DO PRODUTO --- */
+.card-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: var(--fw-md);
+    color: #4f0080;
+    margin-bottom: 0.5rem;
+}
+
+.card-dims {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.card-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2E7D32;
+    margin-bottom: 0.8rem;
+}
+
+/* --- BADGE DE PARCELAMENTO --- */
+.installment-badge {
+    font-size: 0.85rem;
+    color: #e3197e;
+    background: #fdf2f8;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    border: 1px solid #fbcfe8;
+    display: inline-block;
+}
+
+/* --- BOTÕES DO CARD --- */
+.btn-card {
+    margin-top: auto;
+    background-color: #25D366;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-card:hover {
+    background-color: #128C7E;
+}
+
+.btn-card.sold-out {
+    background-color: #dc3545;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* --- MODAL (ZOOM ECRÃ INTEIRO) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 200; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.95); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    object-fit: contain;
+    margin-top: 5vh;
+    animation: zoom 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 201;
+}
+
+@media (width >= 80em) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4.5rem; /* Gap consideravelmente maior entre as caixas no desktop, como solicitado */
+    }
+}

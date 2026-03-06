@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tati Encantos - Loja de Artesanatos</title>
+
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/utility.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/product.css"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-full">
+        <div class="image-wrapper">
+            <img src="assets/img/foto-capa.webp" alt="Imagem dos artesanatos da Tatiane" class="capa-img">
+            
+            <div class="contato-wrapper">
+                <a href="https://instagram.com/tati.encantos?igsh=MXN5YjMxOW11azF4aA==" target="_blank" class="btn-cont btn-gradient">
+                    <img src="assets/img/instagram.webp" alt="Instagram">
+                    Ver no Instagram
+                </a>
+                <a href="https://wa.me/5553981253599" target="_blank" class="btn-cont btn-gradient">
+                    <img src="assets/img/whats.webp" alt="Whatsapp">
+                    Chamar no Whatsapp
+                </a>
+            </div>
+
+            <div class="texto-capa">
+                <h1>Tati Encantos</h1>
+                <p class="subtitulo">Conheça minhas obras, lindas para enfeitar seus lares.</p>
+            </div>
+        </div>
+    </header>
+
+<main class="container">
+    <section class="filters-section">
+        <h2 class="filters-title">Explore nossas peças</h2>
+        <div class="filters-container">
+            <button class="filter-btn" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="animais">Animais</button>
+            <button class="filter-btn" data-filter="fontes">Fontes e Água</button>
+            <button class="filter-btn" data-filter="personagens">Personagem</button>
+            <button class="filter-btn" data-filter="menor-preco">Menor Preço</button>
+            <button class="filter-btn btn-encomendas" data-filter="encomendas">Aceitamos encomendas</button>
+        </div>
+    </section>
+
+    <div id="products-grid" class="products-grid">
+        </div>
+</main>
+
+    <footer>
+        <div class="footer-content container">
+            <p>Desenvolvido com carinho para <strong>Tati Encantos</strong></p>
+            
+            <div class="dev-info">
+                <p>Desenvolvedora Jéssica Oliveira</p>
+                <div class="dev-buttons">
+                    <a href="https://www.instagram.com/jessi_oliveira512?igsh=YzlheGgxMHBhZm41" target="_blank" class="btn-dev">
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/jessica-oliveira-dev" target="_blank" class="btn-dev">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img-in-modal">
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
