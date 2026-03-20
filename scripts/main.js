@@ -402,9 +402,9 @@ const produtos = [
         titulo: "ET Pequeno",
         categoria: "personagens",
         imagens: ["pequeno1.webp", "pequeno2.webp", "pequeno3.webp"],
-        medidas: "90cm alt x 34cm larg",
-        desc: "O toque extraterrestre perfeito para espaços mais compactos.",
-        preco: 250.00,
+        medidas: "Consulte medidas",
+        desc: "Produto indisponível no momemento.",
+        preco: 0.00,
     },
     {
         id: 45,
