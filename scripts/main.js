@@ -440,7 +440,7 @@ function renderProducts(produtosFiltrados = produtos) {
         const whatsLink = `https://wa.me/5553981253599?text=${encodeURIComponent(message)}`;
 
         let buttonHTML;
-        if (produto.id === 39) { 
+        if (produto.id === 39 || produto.id === 44) { 
              buttonHTML = `<span class="btn-card sold-out">Esgotado</span>`;
         } else {
              buttonHTML = `
